@@ -1,0 +1,51 @@
+.secure
+  overflow: hidden
+.secure-wrap
+  display: flex
+  align-items: center
+  flex-direction: row-reverse
+  gap: 20px
+  @media (max-width: $breakpoint-md)
+    flex-direction: column
+  .secure-left
+    flex: 0 1 455px
+    @media (max-width: $breakpoint-md)
+      flex: none
+    .secure-subtitle
+      color: #666
+      margin-bottom: 10px
+    .secure-title
+      margin-bottom: 40px
+    .secure-description
+      line-height: 233%
+      color: #02073e
+      margin-bottom: 30px
+  .secure-right
+    display: flex
+    justify-content: center
+    margin: 0 auto
+    .secure__image-wrap
+      max-width: 100%
+      display: flex
+      justify-content: center
+      align-items: center
+      position: relative
+      @media (max-width: $breakpoint-md)
+        transform: translateX(-10px)
+      img
+        max-width: 100%
+        height: auto
+        object-fit: contain
+      ::after
+        z-index: -1
+        content: ''
+        display: block
+        width: 20px
+        height: 20px
+        position: absolute
+        top: 0
+        left: 0
+        border-radius: 250px 0 0 0
+        width: 1586px
+        height: 950px
+        background: linear-gradient(317deg, rgba(255, 253, 230, 0.35) 0%, rgba(255, 253, 230, 0.35) 0.01%, rgba(224, 239, 250, 0.35) 100%)

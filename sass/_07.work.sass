@@ -1,0 +1,70 @@
+.work
+  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%)
+  display: flex
+  align-items: center
+  justify-content: center
+  .work__sub-background
+    width: 100%
+    height: 100%
+    background: url(../img/work/wrap/1.svg) no-repeat center center
+    background-size: cover
+    @include adaptivPadding($pcSize: 90, $mobSize: 30,$mode: 1)
+    @include adaptivPadding($pcSize: 160, $mobSize: 50,$mode: 3)
+.work__subtitle
+  color: white
+  text-align: center
+  opacity: 0.7
+
+.work__title
+  color: white
+  text-align: center
+  @include adaptivPadding($pcSize: 150, $mobSize: 50,$mode: 3)
+
+.work__card-wrap
+  display: grid
+  grid-template-columns: repeat(4, 1fr)
+  width: 100%
+  gap: 20px
+  @media (max-width: $breakpoint-lg)
+    grid-template-columns: repeat(2, 1fr)
+  @media (max-width: $breakpoint-sm)
+    grid-template-columns: repeat(1, 1fr)
+.work__card
+  display: flex
+  justify-content: center
+  flex-direction: column
+.work__number-wrap
+  display: flex
+  align-items: center
+  justify-content: flex-start
+  gap: 30px
+  padding-bottom: 25px
+  .work__number
+    width: 72px
+    height: 72px
+    background: white
+    border-radius: 30px
+    display: flex
+    align-items: center
+    justify-content: center
+    p
+      font-size: 30px
+      color: #22437d
+  img
+    @media (max-width: $breakpoint-md)
+      width: 0
+.work__body-wrap
+  max-width: 263px
+  @media (max-width: $breakpoint-sm)
+    max-width: 100%
+  .work__body-title
+    font-weight: 700
+    font-size: 22px
+    line-height: 155%
+    color: #fff
+    padding-bottom: 15px
+  .work__body-subtitle
+    font-size: 15px
+    line-height: 173%
+    color: #fff
+    opacity: 0.65

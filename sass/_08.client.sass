@@ -1,0 +1,83 @@
+.client
+  @include adaptivPadding($pcSize: 110, $mobSize: 30,$mode: 1)
+  @include adaptivPadding($pcSize: 140, $mobSize: 40,$mode: 3)
+
+.client__subheader
+  text-align: center
+  padding-bottom: 10px
+
+.client__header
+  @include adaptivPadding($pcSize: 50, $mobSize: 30,$mode: 3)
+  text-align: center
+
+.client-swiper
+  .client__swiper-slide
+    padding: 20px 0
+    display: flex
+    justify-content: center
+
+.client__btn-wrap
+  display: flex
+  gap: 20px
+  justify-content: center
+
+  margin-top: 20px
+  .swiper-button-next,
+  .swiper-button-prev
+
+    z-index: 10
+    cursor: pointer
+    display: flex
+    align-items: center
+    justify-content: center
+  .swiper-button-next
+    right: 10px
+    transform: rotate(180deg)
+  .swiper-button-disabled
+    svg
+      path
+        fill: #bbc7d7
+
+.client__card
+  padding: 33px
+
+  box-shadow: 0 6px 47px 0 rgba(38, 78, 118, 0.1)
+  .client__card-content
+    margin-bottom: 35px
+    .client__star
+      margin-bottom: 10px
+    .client__title
+      font-weight: 700
+      line-height: 206%
+      color: #343d48
+      margin-bottom: 20px
+    .client__subtitle
+      line-height: 211%
+      color: #343d48
+
+.client__icon
+  display: flex
+  align-items: center
+  gap: 20px
+  padding-bottom: 10px
+  .client__img-wrap
+    display: flex
+    align-items: center
+    justify-content: center
+    flex-shrink: 0
+    img
+      max-width: 100%
+      max-height: 100%
+  .sercice__icon-block
+    max-width: 360px
+  .client__icon-text
+    font-weight: 700
+    line-height: 250%
+    letter-spacing: -0.03em
+    color: #0f2137
+  .client__icon-subtext
+    font-weight: 500
+    font-size: 15px
+    line-height: 267%
+    letter-spacing: -0.03em
+    color: #25a0ff

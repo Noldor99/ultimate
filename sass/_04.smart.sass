@@ -1,0 +1,74 @@
+.smart
+  @include adaptivPadding($pcSize: 160, $mobSize: 40,$mode: 3)
+  position: relative
+  .smart__decorate
+    z-index: -1
+    width: 50%
+    position: absolute
+    left: 0
+    top: 15%
+
+.smart-wrap
+  display: flex
+  align-items: center
+  flex-direction: row-reverse
+  gap: 20px
+  @media (max-width: $breakpoint-sm)
+    flex-direction: column
+  .smart-left
+    flex: 0 1 540px
+    @media (max-width: $breakpoint-sm)
+      flex: none
+    .smart-subtitle
+      font-weight: 700
+      font-size: var(--text-sm1)
+      line-height: 286%
+      text-transform: uppercase
+      color: #244886
+      padding-bottom: 5px
+    .smart-title
+      font-size: var(--text-h2)
+      font-weight: 900
+      margin-bottom: 55px
+  .smart-right
+    display: flex
+    justify-content: center
+    margin: 0 auto
+    .smart__image-wrap
+      max-width: 100%
+      display: flex
+      justify-content: center
+      align-items: center
+      img
+        max-width: 100%
+        height: auto
+        object-fit: contain
+
+.smart__icon-wrap
+  display: flex
+  flex-direction: column
+  gap: 20px
+
+.smart__icon
+  display: flex
+  align-items: S
+  gap: 10px
+  padding-bottom: 10px
+  .smart__img-wrap
+    flex-shrink: 0
+    display: flex
+    align-items: flex-start
+    justify-content: center
+    img
+      max-width: 100%
+      max-height: 100%
+  .sercice__icon-block
+    max-width: 360px
+  .smart__icon-text
+    font-size: var(--text-lg)
+    font-weight: 700
+    padding-bottom: 6px
+  .smart__icon-subtext
+    font-size: var(--text-sm1)
+    line-height: 173%
+    color: #343d48

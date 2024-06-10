@@ -1,0 +1,60 @@
+.question
+  @include adaptivPadding($pcSize: 130, $mobSize: 30,$mode: 1)
+  @include adaptivPadding($pcSize: 140, $mobSize: 40,$mode: 3)
+
+.question__subheader
+  text-align: center
+  padding-bottom: 20px
+.question__header
+  text-align: center
+  @include adaptivPadding($pcSize: 90, $mobSize: 30,$mode: 3)
+
+.accordion
+  .accordion__item
+    border-bottom: 1px solid #C4C4C4
+    &.accordion__item-active
+      .accordion__item-content
+        display: block
+        transition: max-height 0.3s ease-in-out
+      .trigger__img-active
+        display: block !important
+      .trigger__img-pasive
+        display: none !important
+.accordion__item-trigger
+  display: flex
+  padding: 20px 0
+  align-items: center
+  cursor: pointer
+  .trigger__num
+    margin-right: 10px
+    font-style: normal
+    font-weight: bold
+    font-size: 16px
+    line-height: 22px
+    letter-spacing: 0.035em
+    color: #25a0ff
+  .trigger__text
+    font-style: normal
+    font-weight: bold
+    font-size: 16px
+    line-height: 22px
+    letter-spacing: 0.035em
+    color: #000000
+    margin-left: 10px
+  .trigger__img
+    position: relative
+    margin-left: auto
+    .trigger__img-active
+      display: none
+    .trigger__img-pasive
+      display: block
+.accordion__item-content
+  max-height: 0
+  overflow: hidden
+  transition: max-height 0.3s ease-in-out
+  .content__text
+    margin-top: 25px
+    padding-left: 35px
+    margin-bottom: 10px
+    &:first-child
+      margin-top: 0

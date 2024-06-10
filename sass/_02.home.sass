@@ -1,0 +1,103 @@
+.home
+  background: linear-gradient(135deg, #1e3c72 0%, #2a5298 100%)
+  display: flex
+  align-items: center
+  justify-content: center
+  border-radius: 0 0 300px 0
+  @media (max-width: $breakpoint-lg)
+    border-radius: 0 0 150px 0
+  @media (max-width: $breakpoint-sm)
+    border-radius: 0 0 100px 0
+  .home__sub-background
+    width: 100%
+    height: 100%
+    background: url(../img/home/wrap/background.svg) no-repeat center center
+    background-size: cover
+    @include adaptivPadding($pcSize: 180, $mobSize: 130,$mode: 1)
+    @include adaptivPadding($pcSize: 150, $mobSize: 50,$mode: 3)
+
+.home-wrap
+  display: flex
+  align-items: center
+  gap: 20px
+  @media (max-width: $breakpoint-sm)
+    flex-direction: column
+  .home-left
+    flex: 0 1 642px
+    @media (max-width: $breakpoint-sm)
+      flex: none
+    .home-title
+      font-weight: 700
+      font-size: var(--text-h1)
+      line-height: 118%
+      letter-spacing: -0.02em
+      color: #fff
+      margin-bottom: 25px
+    .home-subtitle
+      font-weight: 500
+      line-height: 233%
+      font-size: var(--text-lg1)
+      color: #fff
+      margin-bottom: 38px
+  .home-right
+    display: flex
+    justify-content: center
+    margin: 0 0 0 auto
+    position: relative
+    @media (max-width: $breakpoint-sm)
+      margin: 0 auto
+    .home__image-wrap
+      z-index: 1
+      max-width: 100%
+      display: flex
+      justify-content: center
+      align-items: center
+      img
+        max-width: 100%
+        height: auto
+        object-fit: contain
+
+.home__image-absolute
+  position: absolute
+  right: -200px
+  top: -40px
+  width: 400px
+  height: 350px
+  z-index: 0
+  @media (max-width: 1675px)
+    right: 0
+    top: 0
+  @media (max-width: $breakpoint-lg)
+    display: none
+
+.home__btn-wrap
+  display: flex
+  gap: 20px
+  align-items: center
+  margin-bottom: 37px
+.home__icon
+  display: flex
+  align-items: center
+  gap: 10px
+  .home__img-wrap
+    display: flex
+    align-items: center
+    justify-content: center
+    img
+      max-width: 100%
+      max-height: 100%
+  .home__icon-text
+    font-size: var(--text-sm1)
+    font-weight: 500
+    line-height: 150%
+    letter-spacing: -0.01em
+    color: #fff
+
+.home__botton-wrap
+  display: flex
+  align-items: center
+  gap: 30px
+  flex-wrap: wrap
+  p
+    line-height: 262%
+    color: #fff

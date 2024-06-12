@@ -30,38 +30,45 @@
     <title>Document</title>
   </head>
   <body>
-    <header id="header">
-      <div class="header__container">
-        <div class="logo">
-          <a href="#"
-            ><img class="logo__img" src="./img/logo.svg" alt="logo"
-          /></a>
-        </div>
-        <nav class="menu">
-          <ul class="menu-list">
-            <li class="menu__item">
-              <a data-goto=".awards" href="#" class="menu__item-link">Home</a>
-            </li>
-            <li class="menu__item">
-              <a data-goto=".work" href="#" class="menu__item-link">About</a>
-            </li>
-            <li class="menu__item">
-              <a data-goto=".footer" href="#" class="menu__item-link"
-                >Contact</a
-              >
-            </li>
-          </ul>
+    <header class="header" id="header">
+      <div class="header__container container">
+        <a href="" class="header__logo icon">
+          <img src="img/logo.svg" alt="image" />
+        </a>
+        <nav class="header__menu menu" id="menu">
+          <div class="menu__body">
+            <ul class="menu__list">
+              <li class="menu__item">
+                <a data-goto="#home" href="#" class="menu__link active-link"
+                  >Home</a
+                >
+              </li>
+              <li class="menu__item">
+                <a data-goto="#about" href="#" class="menu__link">About </a>
+              </li>
+              <li class="menu__item">
+                <a data-goto="#contact" href="#" class="menu__link">Contact</a>
+              </li>
+            </ul>
+          </div>
+          <div class="menu__actions actions-menu">
+            <div class="actions-menu__user">
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24">
+                <path
+                  d="M4 22C4 17.5817 7.58172 14 12 14C16.4183 14 20 17.5817 20 22H18C18 18.6863 15.3137 16 12 16C8.68629 16 6 18.6863 6 22H4ZM12 13C8.685 13 6 10.315 6 7C6 3.685 8.685 1 12 1C15.315 1 18 3.685 18 7C18 10.315 15.315 13 12 13ZM12 11C14.21 11 16 9.21 16 7C16 4.79 14.21 3 12 3C9.79 3 8 4.79 8 7C8 9.21 9.79 11 12 11Z"
+                ></path>
+              </svg>
+            </div>
+          </div>
+          <button class="icon-menu" type="button">
+            <span></span>
+          </button>
         </nav>
-        <div class="burger">
-          <span></span>
-        </div>
-        <button class="buttom-talk btn_white-outline">Let's talk</button>
       </div>
     </header>
-
     <main>
       <!--home start-->
-      <section class="home">
+      <section class="home" id="home">
         <div class="home__sub-background">
           <div class="container">
             <div class="home-wrap">
@@ -172,7 +179,7 @@
                 you may love this anytime & anywhere
               </h2>
               <div class="smart__icon-wrap">
-                <div class="smart__icon">
+                <div class="smart__icon _anim-items">
                   <div class="smart__img-wrap">
                     <img src="./img/smart/1.svg" />
                   </div>
@@ -184,7 +191,7 @@
                     </p>
                   </div>
                 </div>
-                <div class="smart__icon">
+                <div class="smart__icon _anim-items">
                   <div class="smart__img-wrap">
                     <img src="./img/smart/2.svg" />
                   </div>
@@ -217,9 +224,9 @@
           <h2 class="feature__header title-main">
             Meet exciting feature of app
           </h2>
-          <div class="feature__icon-wrap" data-aos="zoom-in">
+          <div class="feature__icon-wrap">
             <!-- 1 -->
-            <div class="feature__icon">
+            <div class="feature__icon _anim-items">
               <div class="feature__img-wrap">
                 <img src="./img/feature/1.svg" />
               </div>
@@ -232,7 +239,7 @@
               </div>
             </div>
             <!-- 2 -->
-            <div class="feature__icon">
+            <div class="feature__icon _anim-items">
               <div class="feature__img-wrap">
                 <img src="./img/feature/2.svg" />
               </div>
@@ -245,7 +252,7 @@
               </div>
             </div>
             <!-- 3 -->
-            <div class="feature__icon">
+            <div class="feature__icon _anim-items">
               <div class="feature__img-wrap">
                 <img src="./img/feature/3.svg" />
               </div>
@@ -258,7 +265,7 @@
               </div>
             </div>
             <!-- 4 -->
-            <div class="feature__icon">
+            <div class="feature__icon _anim-items">
               <div class="feature__img-wrap">
                 <img src="./img/feature/4.svg" />
               </div>
@@ -271,7 +278,7 @@
               </div>
             </div>
             <!-- 5 -->
-            <div class="feature__icon">
+            <div class="feature__icon _anim-items">
               <div class="feature__img-wrap">
                 <img src="./img/feature/5.svg" />
               </div>
@@ -284,7 +291,7 @@
               </div>
             </div>
             <!-- 6 -->
-            <div class="feature__icon">
+            <div class="feature__icon _anim-items">
               <div class="feature__img-wrap">
                 <img src="./img/feature/6.svg" />
               </div>
@@ -334,7 +341,7 @@
       </section>
       <!--jackpot end-->
       <!--work start-->
-      <section class="work">
+      <section class="work" id="about">
         <div class="work__sub-background">
           <div class="container">
             <div class="work-wrap">
@@ -598,6 +605,35 @@
             <div class="see-wrap">
               <p class="see__subtitle subtitle-main">Whats the function</p>
               <h2 class="see__title title-main">Let’s see how it works</h2>
+              <div class="time__count count-time">
+                <div class="count-time__content">
+                  <div class="count-time__items">
+                    <div class="count-time__item count-time__days _anim-items">
+                      <div class="count-time__value">00</div>
+                      <span class="count-time__text">Дней</span>
+                    </div>
+
+                    <div class="count-time__item count-time__hours _anim-items">
+                      <div class="count-time__value">00</div>
+                      <span class="count-time__text">Часов</span>
+                    </div>
+
+                    <div
+                      class="count-time__item count-time__minutes _anim-items"
+                    >
+                      <div class="count-time__value">00</div>
+                      <span class="count-time__text">Минут</span>
+                    </div>
+
+                    <div
+                      class="count-time__item count-time__seconds _anim-items"
+                    >
+                      <div class="count-time__value">00</div>
+                      <span class="count-time__text">Секунд</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
               <div class="see__card-wrap">
                 <div class="see__card paper-white">
                   <div class="see__card-header">
@@ -810,7 +846,7 @@
       <!--question end-->
     </main>
 
-    <footer class="footer">
+    <footer class="footer" id="contact">
       <div class="footer__wrap container-sm">
         <div class="footer__menu">
           <div class="menu__section">

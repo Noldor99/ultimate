@@ -1,123 +1,199 @@
 // Burger Menu
-$burgerBreakpoint: $breakpoint-sm
 $burgerColor: white
 $burgerActiveColor: white
+$titleColor: white
+$firstColor: hsl(93, 54%, 54%)
 
-// Header
-
-#header
-  overflow: hidden
-  padding-top: 20px
-  padding-bottom: 24px
-  position: absolute
-  right: 0
-  left: 0
+.header
+  position: fixed
   width: 100%
-  box-shadow: 0 0 20px 0 rgba(0, 0, 0, 0.1)
-  z-index: 20
+  top: 0
+  left: 0
+  background: #214d9c
+  z-index: 50
+
 .header__container
+  position: relative
+  height: 76px
   display: flex
-  padding: 0 20px
-  margin: 0 auto
   justify-content: space-between
   align-items: center
-  max-width: $containerWidth
-  .logo
-    z-index: 24
-    position: relative
-    .logo__img
-      color: white
-  .menu
-    .menu-list
-      display: flex
-      gap: 32px
-      .menu__item
-        height: 24px
 
-        .menu__item-link
-          color: white
-        &:hover
-          .menu__item-link
-            transition: all 0.3s ease
-            color: $orange
+.header__logo
+  display: flex
 
-  .burger
-    display: none
+  align-items: center
+  cursor: pointer
+  column-gap: 0.25rem
+  font-weight: 700
+  color: $titleColor
+  z-index: 10
+
+.header__menu
+  display: flex
+  gap: 2rem
+  align-items: center
+  flex: 0 1 750px
+
+.menu__body
+  display: flex
+  flex: 1 1 auto
+
+  .menu__list
+    display: flex
+    gap: 3.5rem
+    z-index: 10
+
+.menu__link
+  color: $titleColor
+  font-size: var(--text-h3)
+  font-weight: 700
+  transition: color .4s ease 0s
+
+  &:hover
+    color: $firstColor
+
+.actions-menu
+  z-index: 2
+  svg
+    width: 32px
+    height: 32px
+    fill: $titleColor
     cursor: pointer
+    transition: fill 0.4s ease 0s
 
-@media (max-width: $burgerBreakpoint)
-  #header
-    .menu
-      position: fixed
-      background: #131418
-      left: 0
+.icon-menu
+  display: none
+.active-link
+  color: $firstColor
+@media (max-width: 68.75em)
+  .header__menu
+    flex: 0 1 auto
+
+@media (max-width: 61.998em)
+  .menu__list
+    gap: 3rem
+
+@media (min-width: 48em)
+  .header::before
+    content: ""
+    position: fixed
+    width: 100%
+    height: 77px
+    top: 0
+    left: 0
+
+  .scroll-active.header::before
+    box-shadow: 0 4px 6px rgba(19, 20, 22, 0.2)
+    backdrop-filter: blur(16px)
+    -webkit-backdrop-filter: blur(16px)
+
+/* ============== Burger ================
+@media (max-width: 47.998em)
+  body._lock
+    overflow: hidden
+
+  .header::before, .header__container
+    height: 70px
+
+  .menu
+    flex: 1 1 auto
+    gap: 1rem
+    justify-content: end
+
+  .menu__list
+    flex-direction: column
+    align-items: center
+    gap: 3rem
+
+  .menu__link
+    font-size: 1.75rem
+
+  .icon-menu
+    display: block
+    flex: 0 0 30px
+    height: 18px
+    position: relative
+    z-index: 5
+    background: transparent
+    span,
+    &::before,
+    &::after
+      content: ""
+      right: 0
+      position: absolute
+      width: 100%
+      height: 2px
+      background-color: $burgerColor
+      transition: all .4s ease 0s
+
+    &::before
       top: 0
-      height: 100vh
-      width: 100vw
-      display: none
-      &.active
-        left: 0
-        top: 0
-        height: 100vh
-        width: 100vw
-        z-index: 22
-        pointer-events: all
-        display: flex
-        animation: fade 0.2s linear
-        .menu-list
-          display: flex
-          flex-direction: column
-          justify-content: center
-          align-items: center
-          margin: 0 auto
-    .burger
-      display: block
-      position: relative
-      height: 20px
-      width: 30px
-      z-index: 102
-      cursor: pointer
-      &.active
-        &:before
-          background: $burgerActiveColor
-          transform: rotate(45deg)
-          transition: cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.3s all
-          top: 8px
-        &:after
-          background: $burgerActiveColor
-          transform: rotate(-45deg)
-          bottom: 10px
-          transition: cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.3s all
-        & span
-          transform: scale(0)
-      &:before,
-      &:after
-        content: ""
-        position: absolute
-        height: 2px
-        width: 100%
-        background: $burgerColor
-        transition: cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.3s all
-      &:before
-        top: 0
+
+    &::after
+      bottom: 0
+
+    span
+      top: calc(50% - 1px)
+
+    &._active
+      span,
+      &::before,
       &::after
-        bottom: 0
+        background: $burgerActiveColor
       span
-        position: absolute
-        top: 9px
-        right: 0
-        width: 100%
-        background: $burgerColor
-        height: 2px
-        transform: scale(1)
-        transition: cubic-bezier(0.785, 0.135, 0.15, 0.86) 0.3s all
-    .menu__item
-      margin-top: 15px
-      &:hover
-        .menu__item-link
-          transition: all 0.3s ease
-          color: $orange
-    .menu__item-link
+        width: 0
+
+      &::before
+        top: calc(50% - 1px)
+        transform: rotate(-45deg)
+
+      &::after
+        top: calc(50% - 1px)
+        transform: rotate(45deg)
+
+  .menu__body
+    position: fixed
+    width: 100%
+    height: 100%
+    right: -100%
+    top: 0
+    background-color: black
+
+    /* 0.2
+    justify-content: center
+    padding: 100px 15px 30px 15px
+    transition: right .4s ease 0s
+    overflow: auto
+    a
       color: white
-    .buttom-talk
-      display: none
+    .active-link
+      color: $firstColor
+    &::before
+      content: ""
+      position: fixed
+      width: 100%
+      height: 70px
+      top: 0
+      right: 0%
+      backdrop-filter: blur(16px)
+      -webkit-backdrop-filter: blur(16px)
+      z-index: 15
+
+    &::after
+      content: ""
+      position: fixed
+      width: 80%
+      height: 100vh
+      top: 70px
+      right: -100%
+      backdrop-filter: blur(16px)
+      -webkit-backdrop-filter: blur(16px)
+      background-color: rgba(19, 20, 22, 0.2)
+      transition: right .4s ease 0s
+
+    &._active
+      right: 0%
+
+      &::after
+        right: 0%

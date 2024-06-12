@@ -1,3 +1,4 @@
+
 .jackpot
   @include adaptivPadding($pcSize: 200, $mobSize: 40,$mode: 3)
 
@@ -32,3 +33,23 @@
         max-width: 100%
         height: auto
         object-fit: contain
+
+._anim-items.jackpot-title
+  transform: translate(-120%, 0px)
+
+._anim-items.jackpot-title._active
+  transform: translate(0px, 0px)
+
+._anim-items.jackpot-subtitle
+  transform: translate(-120%, 0px)
+  transition: all 0.8s ease 0.3s
+
+._anim-items.jackpot-subtitle._active
+  transform: translate(0px, 0px)
+
+._anim-items.jackpot__image-wrap
+  transform: translate(120%, 0px)
+  transition: all 0.8s ease 0.3s
+
+._anim-items.jackpot__image-wrap._active
+  transform: translate(0px, 0px)

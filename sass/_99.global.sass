@@ -44,6 +44,15 @@ body
   @media (max-width: $breakpoint-md)
     padding: 0 10px
 
+._anim-items
+  transform: translate(0px, 60%)
+  opacity: 0
+  transition: all 0.8s ease 0s
+
+  &._active
+    transform: translate(0px, 0%)
+    opacity: 1
+
 .subtitle-main
   font-weight: 700
   font-size: var(--text-sm1)
